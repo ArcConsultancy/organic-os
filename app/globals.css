@@ -1,36 +1,10 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@keyframes borderPulse {
-  0%,
-  100% {
-    border-color: rgb(255 100 103 / 0.4);
-  }
-  50% {
-    border-color: rgb(255 100 103 / 0.8);
-  }
-}
-
-.border-pulse {
-  animation: borderPulse 2s ease-in-out infinite;
-}
-
-.border-pulse-delay-1 {
-  animation: borderPulse 2s ease-in-out infinite 0.5s;
-}
-
-.border-pulse-delay-2 {
-  animation: borderPulse 2s ease-in-out infinite 1s;
-}
-
-.border-pulse-delay-3 {
-  animation: borderPulse 2s ease-in-out infinite 1.5s;
-}
-
 :root {
-  --background: #0a0a0a;
+  --background: #0f0f0f;
   --foreground: #fafafa;
-  --card: #171717;
+  --card: #161616;
   --card-foreground: #fafafa;
   --popover: #262626;
   --popover-foreground: #fafafa;
@@ -82,6 +56,7 @@
 }
 
 @theme inline {
+  --breakpoint-xs: 475px;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -137,7 +112,7 @@
 /* Container Discipline - Layout Primitives */
 @layer components {
   .section {
-    @apply py-20 md:py-32 border-b border-border;
+    @apply py-20 md:py-24 border-b border-border;
   }
 
   .container {

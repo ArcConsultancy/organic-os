@@ -1,146 +1,98 @@
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import Squares from "@/components/Squares";
-import {
-  CalendarMinusIcon,
-  PlayIcon,
-  ClockIcon,
-  CheckCircleIcon,
-} from "@phosphor-icons/react/dist/ssr";
+import { HeroVideoDialog } from "@/components/ui/hero-video-dialog";
+import { ArrowRightIcon } from "@phosphor-icons/react/dist/ssr";
+import Icon from "@/components/Icon";
+import CyclingText from "@/components/CyclingText";
 
 export default function HeroSection() {
   return (
-    <section className="section py-12 relative overflow-hidden">
+    <section className="section py-12 relative overflow-hidden bg-background">
       {/* Animated Squares Background */}
       <div className="absolute inset-0">
         <Squares
           speed={0.5}
-          squareSize={40}
+          squareSize={150}
           direction="diagonal"
           borderColor="#006666"
-          hoverFillColor="rgba(255, 102, 0, 0.05)"
         />
       </div>
 
       {/* Background Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/90 to-background/60 pointer-events-none" />
+      <div className="absolute inset-0 bg-linear-to-br from-secondary/5 via-background to-secondary/5 pointer-events-none" />
 
       {/* Container Layer */}
-      <div className="container relative">
+      <div className="container mx-auto px-4 relative">
         {/* Content Layer - Hero gets max-w-6xl for wide visuals */}
         <div className="max-w-6xl mx-auto space-y-12">
           {/* Logo */}
-          <div className="text-center">
-            <Image
-              src="/images/organic-os-logo.png"
-              alt="OrganicOS"
-              width={200}
-              height={67}
-              priority
-              className="h-14 w-auto mx-auto"
-            />
-          </div>
+          <Icon className="h-10 md:h-14 w-auto mx-auto" />
 
           {/* Main Headline + Subheadline */}
           <div className="text-center space-y-6 max-w-5xl mx-auto">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.1]">
-              300,000,000+ views & 25,000+ inbound leads.{" "}
-              <span className="bg-linear-to-r from-secondary to-secondary/80 bg-clip-text text-transparent">
-                We did it in
-              </span>{" "}
+            {/* Desktop header */}
+            <h1 className="hidden md:block text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground">
+              You're Smart. You're Busy. And You Don't Have Time To Edit Reels
               <br />
               <span className="bg-linear-to-r from-primary to-primary/80 bg-clip-text text-transparent">
-                one short form video.
+                — That's Why We Exist.
               </span>
             </h1>
 
-            <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              <span className="font-bold underline">That's our impact.</span> We
-              build organic media systems so that you can focus on what you do
-              best.
-            </p>
+            {/* Mobile header */}
+            <h1 className="md:hidden text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground">
+              Your Business Is A 10/10 — Your Content Is A 2/10.{" "}
+              <br className="" />
+              <span className="bg-linear-to-r from-primary to-primary/80 bg-clip-text text-transparent">
+                We Fix That!
+              </span>
+            </h1>
+
+            <CyclingText />
           </div>
 
           {/* VSL Video */}
-          <div className="max-w-3xl mx-auto">
-            <Card className="overflow-hidden bg-muted border-2 border-primary/30 shadow-2xl hover:border-primary/50 transition-all duration-300">
-              <CardContent className="p-0">
-                <div className="relative aspect-video bg-gradient-to-br from-primary/20 via-secondary/20 to-primary/20">
-                  {/* Video Placeholder with Play Button */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center space-y-6 p-8">
-                      {/* Large Play Button */}
-                      <button className="group relative w-24 h-24 md:w-28 md:h-28 mx-auto bg-primary rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300 hover:shadow-primary/50">
-                        <PlayIcon
-                          weight="fill"
-                          className="size-12 md:size-14 text-primary-foreground ml-1 group-hover:scale-110 transition-transform"
-                        />
-                        {/* Pulse Animation Ring */}
-                        <span className="absolute inset-0 rounded-full bg-primary animate-ping opacity-20" />
-                      </button>
+          <div className="max-w-3xl xl:max-w-4xl mx-auto">
+            {/* Micro Teaser */}
+            <div className="text-center">
+              <p className="text-sm md:text-base text-muted-foreground font-medium">
+                Watch how we turn busy founders & businesses into authority &
+                lead machines.
+              </p>
+            </div>
 
-                      {/* Video Title */}
-                      <div className="space-y-2">
-                        <p className="text-xl md:text-2xl font-bold text-foreground">
-                          Watch: How We Generated 300M+ Views
-                        </p>
-                        <p className="text-sm md:text-base text-muted-foreground">
-                          See the exact strategy we use to build authority for
-                          our clients
-                        </p>
-                      </div>
-
-                      {/* Video Duration Badge */}
-                      <Badge className="bg-background/90 backdrop-blur-sm text-foreground border-border">
-                        <ClockIcon className="size-4 mr-2" />
-                        3:47 min
-                      </Badge>
-                    </div>
-                  </div>
-
-                  {/* Decorative Corner Accents */}
-                  <div className="absolute top-0 left-0 w-20 h-20 border-t-2 border-l-2 border-primary/40" />
-                  <div className="absolute bottom-0 right-0 w-20 h-20 border-b-2 border-r-2 border-primary/40" />
-                </div>
-              </CardContent>
-            </Card>
+            <div className="relative bg-black/90 rounded-2xl p-8 border-2 border-secondary/30 shadow-[0_20px_50px_rgba(0,102,102,0.5)] hover:shadow-[0_30px_60px_rgba(0,102,102,0.5)] mt-6 transition-shadow duration-500">
+              <div className="aspect-video w-full relative overflow-hidden rounded-xl bg-linear-to-br from-primary/20 via-secondary/20 to-primary/20">
+                {/* Create a fake thumbnail background */}
+                <div className="absolute inset-0 bg-black/50" />
+                <HeroVideoDialog
+                  animationStyle="from-center"
+                  videoSrc="https://www.youtube.com/embed/your-video-id"
+                  thumbnailSrc="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1920' height='1080' viewBox='0 0 1920 1080'%3E%3Crect width='1920' height='1080' fill='%23000000'/%3E%3C/svg%3E"
+                  thumbnailAlt="Watch How It Works Video"
+                  className="w-full h-full"
+                  text="Watch How It Works (2:21)"
+                />
+              </div>
+            </div>
           </div>
 
           {/* CTA Section */}
-          <div className="text-center space-y-6">
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button size="lg" className="hover:scale-105">
-                <CalendarMinusIcon className="size-5" />
-                Book Your Strategy Call
-              </Button>
-            </div>
-
-            {/* Trust Signals */}
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center items-center text-sm md:text-base text-muted-foreground">
-              <div className="flex items-center gap-2">
-                <CheckCircleIcon
-                  weight="fill"
-                  className="size-5 text-primary"
-                />
-                <span className="font-medium">No Long-Term Contracts</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircleIcon
-                  weight="fill"
-                  className="size-5 text-primary"
-                />
-                <span className="font-medium">Free Strategy Session</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircleIcon
-                  weight="fill"
-                  className="size-5 text-primary"
-                />
-                <span className="font-medium">Results-Driven Approach</span>
-              </div>
-            </div>
+          <div className="text-center w-fit mx-auto space-y-6">
+            <Button size="lg" className="hidden sm:flex group">
+              BOOK YOUR FREE 30 MINUTE STRATEGY SESSION
+              <ArrowRightIcon
+                weight="bold"
+                className="size-6 ml-3 transition-transform group-hover:translate-x-2"
+              />
+            </Button>
+            <Button size="sm" className="sm:hidden group">
+              BOOK YOUR STRATEGY SESSION
+              <ArrowRightIcon
+                weight="bold"
+                className="size-4 ml-1 transition-transform group-hover:translate-x-2"
+              />
+            </Button>
           </div>
         </div>
       </div>
