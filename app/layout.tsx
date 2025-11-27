@@ -15,12 +15,12 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Organic OS",
   description:
-    "Stop disappearing and start converting. OrganicOS plans, records, edits and publishes content on autopilot—consistent authority, measurable leads, zero guilt.",
+    "Your competitors are shouting into the void. You won’t. OrganicOS builds the content machine that makes your brand impossible to ignore — and even harder to outrank.",
 
   openGraph: {
     title: "Organic OS",
     description:
-      "Stop disappearing and start converting. OrganicOS plans, records, edits and publishes content on autopilot—consistent authority, measurable leads, zero guilt.",
+      "Your competitors are shouting into the void. You won’t. OrganicOS builds the content machine that makes your brand impossible to ignore — and even harder to outrank.",
     url: "https://organic-os", // your full site URL
     siteName: "Organic OS",
     images: [
