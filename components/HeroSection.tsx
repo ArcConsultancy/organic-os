@@ -31,7 +31,7 @@ export default function HeroSection() {
           {/* Main Headline + Subheadline */}
           <div className="text-center space-y-6 max-w-5xl mx-auto">
             {/* Desktop header */}
-            <h1 className="hidden md:block text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground">
+            <h1 className="hidden md:block text-5xl/14 lg:text-6xl/18 font-bold tracking-tight text-foreground">
               You're Smart. You're Busy. And You Don't Have Time To Edit Reels
               <br />
               <span className="bg-linear-to-r from-primary to-primary/80 bg-clip-text text-transparent">
@@ -40,7 +40,7 @@ export default function HeroSection() {
             </h1>
 
             {/* Mobile header */}
-            <h1 className="md:hidden text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground">
+            <h1 className="md:hidden text-4xl/12 font-bold tracking-tight text-foreground">
               Your Business Is A 10/10 — Your Content Is A 2/10.{" "}
               <br className="" />
               <span className="bg-linear-to-r from-primary to-primary/80 bg-clip-text text-transparent">
